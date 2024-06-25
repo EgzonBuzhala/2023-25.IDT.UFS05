@@ -31,7 +31,7 @@ class Utente:
         return self.password
 
     def ottieni_email(self):
-        return self.email
+        return self.emailpagina
 
     def ottieni_data_di_nascita(self):
         return self.data_di_nascita
@@ -55,7 +55,7 @@ loggedUser = None
 
 @appWeb.route("/")
 def main():
-    return "pagina iniziale da visualizzare"
+    return " quello che voglio"
 
 @appWeb.route("/prova")
 def prova():
