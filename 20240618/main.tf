@@ -22,7 +22,7 @@ variable "AZURE_APP_SERVICE_REPO_URL" {
 
 variable "AZURE_REGION" {
   type    = string
-  default = "eastus"
+  default = "westus"
 }
 
 # Generate a random integer to create a globally unique name
@@ -34,7 +34,7 @@ resource "random_integer" "ri" {
 # Create the resource group
 resource "azurerm_resource_group" "rg" {
   name     = var.AZURE_RESOURCE_GROUP
-  location = "westus"
+  location = var.AZURE_REGION
 }
 
 # Create the Linux App Service Plan
@@ -96,7 +96,7 @@ resource "azurerm_app_service_source_control" "python_scm" {
 resource "azurerm_mysql_flexible_server" "example" {
   name                   = "its-rizzoli-idt-mysql-${random_integer.ri.result}"
   resource_group_name    = azurerm_resource_group.rg.name
-  location               = "northeurope"
+  location               = var.AZURE_REGION
   administrator_login    = "psqladmin"
   // WARN DONT DO THIS, USE SecOps services like Doppler and Azure Key Vault
   administrator_password = "H@Sh1CoR3!"
@@ -106,4 +106,3 @@ resource "azurerm_mysql_flexible_server" "example" {
 output "mysql_fqdn" {
   value = azurerm_mysql_flexible_server.example.fqdn
 }
-
