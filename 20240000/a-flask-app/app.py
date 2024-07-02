@@ -166,7 +166,7 @@ def registrazione_post():
 
 if __name__ == "__main__":
     # https://learn.microsoft.com/en-us/azure/app-service/reference-app-settings
-    initialize_database()
+ #   initialize_database()
     # SERVER_PORT Read-only. The port the app should listen to.
     if "PORT" in os.environ:
         appWeb.run(host="0.0.0.0", port=os.environ['PORT'])
