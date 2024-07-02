@@ -102,7 +102,7 @@ def main():
         cursor.execute(query)
 
         for (first_name, last_name, ) in cursor:
-            risposta = first_name
+            risposta = first_name + '+'
         cursor.close()
         connection.close()
     except Error as e:
