@@ -1,6 +1,6 @@
 CREATE DATABASE egzondb ;
 use egzondb ;
-CREATE TABLE `employees` (
+CREATE TABLE employees (
   first_name varchar(45) DEFAULT NULL,
   last_name varchar(45) DEFAULT NULL
 );
