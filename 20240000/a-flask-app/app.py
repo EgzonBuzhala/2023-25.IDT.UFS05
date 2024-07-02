@@ -84,7 +84,7 @@ loggedUser = None
 
 @appWeb.route("/")
 def main():
-   ''' connection = None
+    connection = None
     risposta="nessuna risposta"
     try:
         connection = mysql.connector.connect(
@@ -94,7 +94,7 @@ def main():
             database="egzondb"
         )
         risposta="Connection to MySQL DB successful"
-        cursor = connection.cursor()
+        '''  cursor = connection.cursor()
 
         query = ("SELECT first_name, last_name FROM employees")
 
@@ -104,11 +104,11 @@ def main():
         for (first_name, last_name, ) in cursor:
             risposta = first_name
         cursor.close()
-        connection.close()
+        connection.close()'''
     except Error as e:
         risposta=f"The error '{e}' occurred"
-    return risposta'''
-   return 'VA'
+    return risposta
+   
 
 @appWeb.route("/prova")
 def prova():
