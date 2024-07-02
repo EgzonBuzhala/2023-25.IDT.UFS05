@@ -84,7 +84,7 @@ loggedUser = None
 
 @appWeb.route("/")
 def main():
-    connection = None
+   ''' connection = None
     risposta="nessuna risposta"
     try:
         connection = mysql.connector.connect(
@@ -107,7 +107,8 @@ def main():
         connection.close()
     except Error as e:
         risposta=f"The error '{e}' occurred"
-    return risposta
+    return risposta'''
+   return 'VA'
 
 @appWeb.route("/prova")
 def prova():
